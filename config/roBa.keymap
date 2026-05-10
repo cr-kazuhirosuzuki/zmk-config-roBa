@@ -22,6 +22,14 @@
                 <&macro_tap &mkp LCLK>,
                 <&macro_release &kp LGUI>;
         };
+
+        SelWord_Apple: SelWord_Apple {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LA(LEFT)>,
+                <&kp LA(LS(RIGHT))>;
+        };
     };
 
     combos {
@@ -32,6 +40,12 @@
             key-positions = <13 25>;
             bindings = <&caps_word>;
         };
+
+        f1_combo {
+            timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp F1>;
+        };
     };
 
     keymap {
@@ -39,7 +53,14 @@
 
         Mouse_Apple {
             bindings = <
-                &ShiftClick &GuiClick &trans
+                &ShiftClick &GuiClick &SelWord_Apple
+            >;
+            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+        };
+
+        Mouse_LinWin {
+            bindings = <
+                &trans &trans &trans
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
