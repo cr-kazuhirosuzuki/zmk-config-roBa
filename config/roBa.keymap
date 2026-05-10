@@ -1,18 +1,22 @@
 
 / {
     macros {
-        shift_click: shift_click {
+        ShiftClick: ShiftClick {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings =
                 <&macro_press &kp LSHIFT>,
                 <&macro_tap &mkp LCLK>,
                 <&macro_release &kp LSHIFT>;
         };
 
-        gui_click: gui_click {
+        GuiClick: GuiClick {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings =
                 <&macro_press &kp LGUI>,
                 <&macro_tap &mkp LCLK>,
@@ -35,9 +39,27 @@
 
         Mouse_Apple {
             bindings = <
-                &none &none &none
+                &ShiftClick &GuiClick &trans
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+        };
+
+        MouseSlow {
+            bindings = <
+                &trans &trans &trans
+            >;
+        };
+
+        MouseFast {
+            bindings = <
+                &trans &trans &trans
+            >;
+        };
+
+        MouseWarp {
+            bindings = <
+                &trans &trans &trans
+            >;
         };
 
         EncoderHorizontal {
