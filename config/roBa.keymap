@@ -30,6 +30,14 @@
                 <&kp LA(LEFT)>,
                 <&kp LA(LS(RIGHT))>;
         };
+
+        SelWord_LinWin: SelWord_LinWin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LC(LEFT)>,
+                <&kp LC(LS(RIGHT))>;
+        };
     };
 
     combos {
@@ -46,21 +54,35 @@
             key-positions = <1 2>;
             bindings = <&kp F1>;
         };
+
+        tab_combo {
+            timeout-ms = <30>;
+            key-positions = <57 60>;
+            bindings = <&kp TAB>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
+        HRM_Apple_enUS_ColemakDH {
+            bindings = <
+                &kp Q  &kp W  &kp F
+                &kp A  &kp R  &kp S
+                &kp Z  &kp X  &kp C
+            >;
+        };
+
         Mouse_Apple {
             bindings = <
                 &ShiftClick &GuiClick &SelWord_Apple
             >;
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         Mouse_LinWin {
             bindings = <
-                &trans &trans &trans
+                &trans &trans &SelWord_LinWin
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
