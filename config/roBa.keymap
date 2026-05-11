@@ -22,7 +22,6 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LSHIFT>, <&macro_tap &mkp LCLK>, <&macro_release &kp LSHIFT>;
         };
-
         gui_click: gui_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,7 +29,6 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LGUI>, <&macro_tap &mkp LCLK>, <&macro_release &kp LGUI>;
         };
-
         ctrl_click: ctrl_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -38,7 +36,6 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp LCLK>, <&macro_release &kp LCTRL>;
         };
-
         selword_apple: selword_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -46,7 +43,6 @@
             tap-ms = <1>;
             bindings = <&kp LA(LEFT)>, <&kp LA(LS(RIGHT))>;
         };
-
         selword_linwin: selword_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -54,25 +50,21 @@
             tap-ms = <1>;
             bindings = <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>;
         };
-
         selline_apple: selline_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LEFT)>, <&kp LS(LG(RIGHT))>;
         };
-
         selline_linwin: selline_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME>, <&kp LS(END)>;
         };
-
         selblock_apple: selblock_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(A)>, <&kp LA(LS(DOWN))>;
         };
-
         selblock_linwin: selblock_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -82,19 +74,16 @@
 
     combos {
         compatible = "zmk,combos";
-
         caps_word_combo {
             timeout-ms = <30>;
             key-positions = <13 25>;
             bindings = <&caps_word>;
         };
-
         f1_combo {
             timeout-ms = <30>;
             key-positions = <1 2>;
             bindings = <&kp F1>;
         };
-
         f2_combo {
             timeout-ms = <30>;
             key-positions = <2 3>;
