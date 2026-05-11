@@ -22,7 +22,6 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LSHIFT>, <&macro_tap &mkp LCLK>, <&macro_release &kp LSHIFT>;
         };
-
         gui_click: gui_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,7 +29,6 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LGUI>, <&macro_tap &mkp LCLK>, <&macro_release &kp LGUI>;
         };
-
         ctrl_click: ctrl_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -38,37 +36,31 @@
             tap-ms = <1>;
             bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp LCLK>, <&macro_release &kp LCTRL>;
         };
-
         selword_apple: selword_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LEFT)>, <&kp LA(LS(RIGHT))>;
         };
-
         selword_linwin: selword_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>;
         };
-
         selline_apple: selline_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LEFT)>, <&kp LS(LG(RIGHT))>;
         };
-
         selline_linwin: selline_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME>, <&kp LS(END)>;
         };
-
         selblock_apple: selblock_apple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(A)>, <&kp LA(LS(DOWN))>;
         };
-
         selblock_linwin: selblock_linwin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -87,6 +79,16 @@
             timeout-ms = <30>;
             key-positions = <1 2>;
             bindings = <&kp F1>;
+        };
+        f2_combo {
+            timeout-ms = <30>;
+            key-positions = <2 3>;
+            bindings = <&kp F2>;
+        };
+        f3_combo {
+            timeout-ms = <30>;
+            key-positions = <3 4>;
+            bindings = <&kp F3>;
         };
     };
 
@@ -143,69 +145,69 @@
 
         cursor1_apple {
             bindings = <
-                &kp LEFT &kp DOWN &kp UP &kp RIGHT &selword_apple &selline_apple &selblock_apple &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp LG(LEFT) &kp LA(LEFT) &kp UP &kp LA(RIGHT) &kp LG(RIGHT) &kp LEFT &kp DOWN &kp UP &kp RIGHT &selword_apple &selline_apple &selblock_apple &kp PG_UP &kp PG_DN &kp HOME &kp END &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         cursor1_linwin {
             bindings = <
-                &kp LEFT &kp DOWN &kp UP &kp RIGHT &selword_linwin &selline_linwin &selblock_linwin &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp HOME &kp LC(LEFT) &kp UP &kp LC(RIGHT) &kp END &kp LEFT &kp DOWN &kp UP &kp RIGHT &selword_linwin &selline_linwin &selblock_linwin &kp PG_UP &kp PG_DN &kp HOME &kp END &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         cursor2_apple {
             bindings = <
-                &kp LG(TAB) &kp LS(LG(TAB)) &kp LG(W) &kp LC(UP) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp LG(TAB) &kp LS(LG(TAB)) &kp LC(TAB) &kp LS(LC(TAB)) &kp LG(W) &kp LG(Q) &kp LC(UP) &kp LC(DOWN) &kp LC(LEFT) &kp LC(RIGHT) &kp LG(GRAVE) &kp LS(LG(GRAVE)) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         cursor2_linwin {
             bindings = <
-                &kp LA(TAB) &kp LS(LA(TAB)) &kp LC(TAB) &kp LS(LC(TAB)) &kp LA(F4) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp LA(TAB) &kp LS(LA(TAB)) &kp LC(TAB) &kp LS(LC(TAB)) &kp LA(F4) &kp LG(TAB) &kp LG(LEFT) &kp LG(RIGHT) &kp LG(UP) &kp LG(DOWN) &kp LC(W) &kp LC(LS(TAB)) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         symbol_enus {
             bindings = <
-                &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR &kp LEFT_BRACE &kp LBKT &kp RBKT &kp RIGHT_BRACE &kp PIPE &none &none &kp PLUS &kp MINUS &kp EQUAL &kp FSLH &kp BSLH &kp LT &kp GT &kp GRAVE &kp TILDE &kp DQT &kp SQT &kp SEMI &kp COLON &kp COMMA &kp DOT &kp QUESTION &kp SLASH &none &none &none &none &none &none &none &none &none
             >;
         };
 
         symbol_jajp {
             bindings = <
-                &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTERISK &kp LPAR &kp RPAR &kp LEFT_BRACE &kp LBKT &kp RBKT &kp RIGHT_BRACE &kp PIPE &none &none &kp PLUS &kp MINUS &kp EQUAL &kp FSLH &kp BSLH &kp LT &kp GT &kp GRAVE &kp TILDE &kp DQT &kp SQT &kp SEMI &kp COLON &kp COMMA &kp DOT &kp QUESTION &kp SLASH &none &none &none &none &none &none &none &none &none
             >;
         };
 
         number_enus {
             bindings = <
-                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp PLUS &kp MINUS &kp EQUAL &kp FSLH &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp TAB &kp LPAR &kp RPAR &kp EQUAL &kp ENTER &none &none &kp ASTERISK &kp PLUS &kp MINUS &kp FSLH &kp BSPC &kp LT &kp GT &kp COMMA &kp DOT &kp SQT &kp CARET &kp SPACE &kp COLON &kp SEMI &kp PERCENT &kp AMPS &kp DLLR &none &none &none &none &none &none &none &none &none
             >;
         };
 
         number_jajp {
             bindings = <
-                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp PLUS &kp MINUS &kp EQUAL &kp FSLH &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp TAB &kp LPAR &kp RPAR &kp EQUAL &kp ENTER &none &none &kp ASTERISK &kp PLUS &kp MINUS &kp FSLH &kp BSPC &kp LT &kp GT &kp COMMA &kp DOT &kp SQT &kp CARET &kp SPACE &kp COLON &kp SEMI &kp PERCENT &kp AMPS &kp DLLR &none &none &none &none &none &none &none &none &none
             >;
         };
 
         mouse_apple {
             bindings = <
-                &mkp MB4 &mkp LCLK &mkp MCLK &mkp RCLK &mkp MB5 &shift_click &gui_click &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &mkp MB4 &mkp LCLK &mkp MCLK &mkp RCLK &mkp MB5 &shift_click &gui_click &selword_apple &selline_apple &selblock_apple &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         mouse_linwin {
             bindings = <
-                &mkp MB4 &mkp LCLK &mkp MCLK &mkp RCLK &mkp MB5 &shift_click &ctrl_click &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &mkp MB4 &mkp LCLK &mkp MCLK &mkp RCLK &mkp MB5 &shift_click &ctrl_click &selword_linwin &selline_linwin &selblock_linwin &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         magic {
             bindings = <
-                &to 0 &to 1 &to 2 &to 3 &to 4 &to 5 &to 6 &to 7 &bootloader &bt BT_CLR &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &to 0 &to 1 &to 2 &to 3 &to 4 &to 5 &to 6 &to 7 &bootloader &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &sys_reset &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
 
