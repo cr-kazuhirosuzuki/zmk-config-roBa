@@ -1,6 +1,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -19,10 +20,7 @@
             #binding-cells = <0>;
             wait-ms = <1>;
             tap-ms = <1>;
-            bindings =
-                <&macro_press &kp LSHIFT>,
-                <&macro_tap &mkp LCLK>,
-                <&macro_release &kp LSHIFT>;
+            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &mkp LCLK>, <&macro_release &kp LSHIFT>;
         };
 
         gui_click: gui_click {
@@ -30,10 +28,15 @@
             #binding-cells = <0>;
             wait-ms = <1>;
             tap-ms = <1>;
-            bindings =
-                <&macro_press &kp LGUI>,
-                <&macro_tap &mkp LCLK>,
-                <&macro_release &kp LGUI>;
+            bindings = <&macro_press &kp LGUI>, <&macro_tap &mkp LCLK>, <&macro_release &kp LGUI>;
+        };
+
+        ctrl_click: ctrl_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &mkp LCLK>, <&macro_release &kp LCTRL>;
         };
 
         selword_apple: selword_apple {
@@ -41,9 +44,7 @@
             #binding-cells = <0>;
             wait-ms = <1>;
             tap-ms = <1>;
-            bindings =
-                <&kp LA(LEFT)>,
-                <&kp LA(LS(RIGHT))>;
+            bindings = <&kp LA(LEFT)>, <&kp LA(LS(RIGHT))>;
         };
 
         selword_linwin: selword_linwin {
@@ -51,9 +52,31 @@
             #binding-cells = <0>;
             wait-ms = <1>;
             tap-ms = <1>;
-            bindings =
-                <&kp LC(LEFT)>,
-                <&kp LC(LS(RIGHT))>;
+            bindings = <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>;
+        };
+
+        selline_apple: selline_apple {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT)>, <&kp LS(LG(RIGHT))>;
+        };
+
+        selline_linwin: selline_linwin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME>, <&kp LS(END)>;
+        };
+
+        selblock_apple: selblock_apple {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>, <&kp LA(LS(DOWN))>;
+        };
+
+        selblock_linwin: selblock_linwin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP)>, <&kp LC(LS(DOWN))>;
         };
     };
 
@@ -71,6 +94,12 @@
             key-positions = <1 2>;
             bindings = <&kp F1>;
         };
+
+        f2_combo {
+            timeout-ms = <30>;
+            key-positions = <2 3>;
+            bindings = <&kp F2>;
+        };
     };
 
     keymap {
@@ -78,50 +107,144 @@
 
         hrm_apple_enus_colemakdh {
             bindings = <
-                &kp Q      &kp W      &kp F      &kp P      &kp B      &kp J      &kp L      &kp U      &kp Y      &kp MINUS
-                &kp A      &kp R      &kp S      &kp T      &kp G      &none      &none      &kp M      &kp N      &kp E      &kp I      &kp O
-                &kp Z      &kp X      &kp C      &kp D      &kp V      &kp LANG2  &kp LANG1  &kp K      &kp H      &kp COMMA  &kp DOT    &kp SQT
-                &none      &none      &none      &none      &none      &none      &none      &none      &none
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp MINUS &kp A &kp R &kp S &kp T &kp G &none &none &kp M &kp N &kp E &kp I &kp O &kp Z &kp X &kp C &kp D &kp V &kp LANG2 &kp LANG1 &kp K &kp H &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_linwin_enus_colemakdh {
+            bindings = <
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp MINUS &kp A &kp R &kp S &kp T &kp G &none &none &kp M &kp N &kp E &kp I &kp O &kp Z &kp X &kp C &kp D &kp V &kp INT5 &kp INT4 &kp K &kp H &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_apple_jajp_colemakdh {
+            bindings = <
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp MINUS &kp A &kp R &kp S &kp T &kp G &none &none &kp M &kp N &kp E &kp I &kp O &kp Z &kp X &kp C &kp D &kp V &kp LANG2 &kp LANG1 &kp K &kp H &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_linwin_jajp_colemakdh {
+            bindings = <
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp MINUS &kp A &kp R &kp S &kp T &kp G &none &none &kp M &kp N &kp E &kp I &kp O &kp Z &kp X &kp C &kp D &kp V &kp INT5 &kp INT4 &kp K &kp H &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_apple_enus_qwerty {
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp A &kp S &kp D &kp F &kp G &none &none &kp H &kp J &kp K &kp L &kp MINUS &kp Z &kp X &kp C &kp V &kp B &kp LANG2 &kp LANG1 &kp N &kp M &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_linwin_enus_qwerty {
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp A &kp S &kp D &kp F &kp G &none &none &kp H &kp J &kp K &kp L &kp MINUS &kp Z &kp X &kp C &kp V &kp B &kp INT5 &kp INT4 &kp N &kp M &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_apple_jajp_qwerty {
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp A &kp S &kp D &kp F &kp G &none &none &kp H &kp J &kp K &kp L &kp MINUS &kp Z &kp X &kp C &kp V &kp B &kp LANG2 &kp LANG1 &kp N &kp M &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        hrm_linwin_jajp_qwerty {
+            bindings = <
+                &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp A &kp S &kp D &kp F &kp G &none &none &kp H &kp J &kp K &kp L &kp MINUS &kp Z &kp X &kp C &kp V &kp B &kp INT5 &kp INT4 &kp N &kp M &kp COMMA &kp DOT &kp SQT &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        cursor1_apple {
+            bindings = <
+                &selword_apple &selline_apple &selblock_apple &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        cursor1_linwin {
+            bindings = <
+                &selword_linwin &selline_linwin &selblock_linwin &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        cursor2_apple {
+            bindings = <
+                &kp LC(UP) &kp LG(TAB) &kp LG(W) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        cursor2_linwin {
+            bindings = <
+                &kp LG(TAB) &kp LA(TAB) &kp LA(F4) &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        symbol_enus {
+            bindings = <
+                &kp LEFT_BRACE &kp LPAR &kp RPAR &kp RIGHT_BRACE &kp QUESTION &kp EXCL &kp PLUS &kp MINUS &kp EQUAL &kp PERCENT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        symbol_jajp {
+            bindings = <
+                &kp LEFT_BRACE &kp LPAR &kp RPAR &kp RIGHT_BRACE &kp QUESTION &kp EXCL &kp PLUS &kp MINUS &kp EQUAL &kp PERCENT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        number_enus {
+            bindings = <
+                &kp EQUAL &kp LPAR &kp RPAR &kp COLON &none &kp ASTERISK &kp PLUS &kp MINUS &kp FSLH &kp PERCENT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
+        number_jajp {
+            bindings = <
+                &kp EQUAL &kp LPAR &kp RPAR &kp COLON &none &kp ASTERISK &kp PLUS &kp MINUS &kp FSLH &kp PERCENT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
 
         mouse_apple {
             bindings = <
-                &shift_click &gui_click &selword_apple
+                &shift_click &gui_click &selword_apple &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         mouse_linwin {
             bindings = <
-                &shift_click &gui_click &selword_linwin
+                &shift_click &ctrl_click &selword_linwin &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
+        magic {
+            bindings = <
+                &bootloader &bt BT_CLR &none &none &none &none &to 4 &to 5 &to 6 &to 7 &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+
         mouse_slow {
             bindings = <
-                &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         mouse_fast {
             bindings = <
-                &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         mouse_warp {
             bindings = <
-                &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         encoder_horizontal {
             bindings = <
-                &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
             sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
+
     };
 };
