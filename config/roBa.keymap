@@ -1859,6 +1859,7 @@
     };
 };
 
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -2268,4 +2269,4 @@
         };
 
     };
-
+};
