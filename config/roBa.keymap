@@ -91,11 +91,6 @@
 #define LAYER_TypingFocus_Q 25
 #define LAYER_HSCROLL 26
 
-/* roBa physical trackball configuration. Must be top-level, like original roBa keymap. */
-&trackball {
-    automouse-layer = <LAYER_Pointer_Default_A>;
-    scroll-layers = <LAYER_HSCROLL>;
-};
 
 /* System behavior and macros */
 
@@ -1836,26 +1831,6 @@
 
 
     behaviors {
-        scroll_up_down_natural: scroll_up_down_natural {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
-        };
-
-        scroll_up_down_raw: scroll_up_down_raw {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
-        };
-
-        scroll_left_right: scroll_left_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-            tap-ms = <20>;
-        };
     };
 };
 
@@ -1875,7 +1850,6 @@
   &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 ESC
   &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Base_CAJ {
@@ -1890,7 +1864,6 @@
   &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 ESC
   &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Base_CLWE {
@@ -1905,7 +1878,6 @@
   &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 ESC
   &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Base_CLWJ {
@@ -1920,7 +1892,6 @@
   &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 ESC
   &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Base_QAE {
@@ -1935,7 +1906,6 @@
   &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 ESC
   &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Base_QAJ {
@@ -1950,7 +1920,6 @@
   &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 ESC
   &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Base_QLWE {
@@ -1965,7 +1934,6 @@
   &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 ESC
   &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Base_QLWJ {
@@ -1980,7 +1948,6 @@
   &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 ESC
   &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &mo 12>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_CursorNav_A {
@@ -1995,7 +1962,6 @@
   &tog 8  &trans  &trans
   &trans  &none
   &ScreenLock_A>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_CursorNav_LW {
@@ -2010,7 +1976,6 @@
   &tog 9  &trans  &trans
   &trans  &none
   &ScreenLock_LW>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_CursorText_A {
@@ -2025,7 +1990,6 @@
   &tog 10  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_CursorText_LW {
@@ -2040,7 +2004,6 @@
   &tog 11  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Magic {
@@ -2055,7 +2018,6 @@
   &tog 12  &none  &none
   &none  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Number_E {
@@ -2070,7 +2032,6 @@
   &tog 13  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Number_J {
@@ -2085,7 +2046,6 @@
   &tog 14  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Pointer_Default_A {
@@ -2100,7 +2060,6 @@
   &PointerLayer_A  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Pointer_Default_LW {
@@ -2115,7 +2074,6 @@
   &PointerLayer_LW  &trans  &trans
   &trans  &none
   &none>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Pointer_Precision {
@@ -2130,7 +2088,6 @@
   &trans  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Pointer_Rapid {
@@ -2145,7 +2102,6 @@
   &trans  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Pointer_Travel {
@@ -2160,7 +2116,6 @@
   &trans  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_Symbol_E {
@@ -2175,7 +2130,6 @@
   &tog 20  &trans  &trans
   &trans  &none
   &kp GRAVE>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_Symbol_J {
@@ -2190,7 +2144,6 @@
   &tog 21  &trans  &trans
   &trans  &none
   &kp LS(LBKT)>;
-            sensor-bindings = <&scroll_up_down_raw>;
         };
 
         layer_TypingAutoshift_C {
@@ -2205,7 +2158,6 @@
   &tog 22  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_TypingAutoshift_Q {
@@ -2220,7 +2172,6 @@
   &tog 23  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_TypingFocus_C {
@@ -2235,7 +2186,6 @@
   &tog 24  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_TypingFocus_Q {
@@ -2250,7 +2200,6 @@
   &tog 25  &trans  &trans
   &trans  &trans
   &trans>;
-            sensor-bindings = <&scroll_up_down_natural>;
         };
 
         layer_HSCROLL {
@@ -2265,7 +2214,6 @@
   &none  &none  &none
   &none  &none
   &none>;
-            sensor-bindings = <&scroll_left_right>;
         };
 
     };
