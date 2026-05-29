@@ -91,6 +91,12 @@
 #define LAYER_TypingFocus_Q 25
 #define LAYER_HSCROLL 26
 
+/* roBa physical trackball configuration. Must be top-level, like original roBa keymap. */
+&trackball {
+    automouse-layer = <LAYER_Pointer_Default_A>;
+    scroll-layers = <LAYER_HSCROLL>;
+};
+
 /* System behavior and macros */
 
 
@@ -1828,21 +1834,7 @@
     };
 
 
-/* roBa pointer backend overrides
- *
- * - Direct scroll keys are handled with &msc bindings in the layers.
- * - The physical rotary encoder/wheel needs sensor-bindings per layer.
- * - The PMW3610 trackball uses &trackball for scroll-layer selection.
- * - trackball_listener layer overrides approximate Precision/Default/Rapid/Travel.
- */
 
-&trackball {
-    automouse-layer = <LAYER_Pointer_Default_A>;
-    scroll-layers = <LAYER_HSCROLL>;
-};
-
-
-/ {
     behaviors {
         scroll_up_down_natural: scroll_up_down_natural {
             compatible = "zmk,behavior-sensor-rotate";
@@ -2276,5 +2268,4 @@
         };
 
     };
-};
 
