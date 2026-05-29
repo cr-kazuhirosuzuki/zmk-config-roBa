@@ -111,6 +111,13 @@
 
 / {
     behaviors {
+
+        scroll_up_down: scroll_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
         magic: magic {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_HOLD_TAP";
@@ -2060,6 +2067,7 @@
   &PointerLayer_A  &trans  &trans
   &trans  &none
   &none>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_Pointer_Default_LW {
@@ -2074,6 +2082,7 @@
   &PointerLayer_LW  &trans  &trans
   &trans  &none
   &none>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_Pointer_Precision {
