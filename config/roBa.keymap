@@ -6,7 +6,7 @@
  */
 
 
-/* roBa conversion generated from 9ee9c638-15a2-4e4c-8803-091a71d8ecfb_ks40.json source
+/* roBa conversion generated from 9ee9c638-15a2-4e4c-8803-091a71d8ecfb_ks40.json source; based on last-known-good 0f7cced4 wheel-all-layers keymap
  *
  * This file was generated automatically. You may or may not want to
  * edit it directly.
@@ -466,8 +466,8 @@
             bindings = <&kp LA(RIGHT)>;
         };
 
-        InputSwitch_A: InputSwitch_A {
-            label = "&INPUTSWITCH_A";
+        InputSwitch_ALW: InputSwitch_ALW {
+            label = "&INPUTSWITCH_ALW";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(SPACE)>;
@@ -1288,7 +1288,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&EmojiPicker_A>, <&InputSwitch_A>;
+            bindings = <&EmojiPicker_A>, <&InputSwitch_ALW>;
             flavor = "tap-preferred";
         };
 
@@ -1296,7 +1296,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&EmojiPicker_LW>, <&InputSwitch_LW>;
+            bindings = <&EmojiPicker_LW>, <&InputSwitch_ALW>;
             flavor = "tap-preferred";
         };
 
@@ -1613,9 +1613,9 @@
             bindings = <&HT_CapsWord_Shift LSHFT 0>;
         };
 
-        combo_Delete {
+        combo_Escape {
             key-positions = <38 39>;
-            bindings = <&kp DEL>;
+            bindings = <&kp ESC>;
         };
 
         combo_FnF01 {
@@ -1834,7 +1834,8 @@
     };
 };
 
-/ {    keymap {
+/ {
+    keymap {
         compatible = "zmk,keymap";
 
         layer_Base_CAE {
@@ -1953,9 +1954,9 @@
             bindings = <
   &none  &none  &ZoomOut_A  &ZoomIn_A  &none  &ScreenCapture_A
   &DesktopLeft_A  &AppPrev_A  &AppNext_A  &DesktopRight_A  &TabPrev_ALW  &HistoryBack_A
-  &HistoryForward_A  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_A
+  &HistoryForward_A  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_A 0 0
   &SystemSearch_A  &TaskView_A  &FullscreenToggle_A  &WindowClose_A  &none  &DevTools_A
-  &CommandPalette_A  &URLbar_A  &none  &trans  &trans  &HT_Copilot_A
+  &CommandPalette_A  &URLbar_A  &none  &trans  &trans  &HT_Copilot_A 0 0
   &SnapLeft_A  &SnapUp_A  &SnapDown_A  &SnapRight_A  &none  &none
   &none  &tog 8  &trans  &trans  &trans  &none
   &ScreenLock_A
@@ -1967,9 +1968,9 @@
             bindings = <
   &none  &none  &ZoomOut_LW  &ZoomIn_LW  &none  &ScreenCapture_LW
   &DesktopLeft_LW  &AppPrev_LW  &AppNext_LW  &DesktopRight_LW  &TabPrev_ALW  &HistoryBack_LW
-  &HistoryForward_LW  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_LW
+  &HistoryForward_LW  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_LW 0 0
   &SystemSearch_LW  &TaskView_LW  &FullscreenToggle_LW  &WindowClose_LW  &none  &DevTools_LW
-  &CommandPalette_LW  &URLbar_LW  &none  &trans  &trans  &HT_Copilot_LW
+  &CommandPalette_LW  &URLbar_LW  &none  &trans  &trans  &HT_Copilot_LW 0 0
   &SnapLeft_LW  &SnapUp_LW  &SnapDown_LW  &SnapRight_LW  &none  &none
   &none  &tog 9  &trans  &trans  &trans  &none
   &ScreenLock_LW
@@ -1979,11 +1980,11 @@
 
         layer_CursorText_A {
             bindings = <
-  &none  &FindPrev_A  &HT_Find_Replace_A  &FindNext_A  &none  &none
-  &HT_MoveSelectWordPrev_A  &HT_MoveSelectBlockPrev_A  &HT_MoveSelectBlockNext_A  &HT_MoveSelectWordNext_A  &SelectClear_ALW  &SelectWholeBlock_A
+  &none  &FindPrev_A  &HT_Find_Replace_A 0 0  &FindNext_A  &none  &none
+  &HT_MoveSelectWordPrev_A 0 0  &HT_MoveSelectBlockPrev_A 0 0  &HT_MoveSelectBlockNext_A 0 0  &HT_MoveSelectWordNext_A 0 0  &SelectClear_ALW  &SelectWholeBlock_A
   &SelectWholeLine_A  &SelectWholeWord_A  &none  &none  &mo 26  &none
-  &kp LEFT  &HT_MoveSelectLinePrev_A  &HT_MoveSelectLineNext_A  &kp RIGHT  &HT_Undo_Redo_A  &Cut_A
-  &HT_Copy_ClipboardHistory_A  &HT_Paste_PastePlain_A  &HT_CaseCycle_Reconvert_A  &trans  &trans  &none
+  &kp LEFT  &HT_MoveSelectLinePrev_A 0 0  &HT_MoveSelectLineNext_A 0 0  &kp RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
+  &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &HT_CaseCycle_Reconvert_A 0 0  &trans  &trans  &none
   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &none  &none
   &none  &tog 10  &trans  &trans  &trans  &none
   &none
@@ -1993,11 +1994,11 @@
 
         layer_CursorText_LW {
             bindings = <
-  &none  &FindPrev_LW  &HT_Find_Replace_LW  &FindNext_LW  &none  &none
-  &HT_MoveSelectWordPrev_LW  &HT_MoveSelectBlockPrev_LW  &HT_MoveSelectBlockNext_LW  &HT_MoveSelectWordNext_LW  &SelectClear_ALW  &SelectWholeBlock_LW
+  &none  &FindPrev_LW  &HT_Find_Replace_LW 0 0  &FindNext_LW  &none  &none
+  &HT_MoveSelectWordPrev_LW 0 0  &HT_MoveSelectBlockPrev_LW 0 0  &HT_MoveSelectBlockNext_LW 0 0  &HT_MoveSelectWordNext_LW 0 0  &SelectClear_ALW  &SelectWholeBlock_LW
   &SelectWholeLine_LW  &SelectWholeWord_LW  &none  &none  &mo 26  &none
-  &kp LEFT  &HT_MoveSelectLinePrev_LW  &HT_MoveSelectLineNext_LW  &kp RIGHT  &HT_Undo_Redo_LW  &Cut_LW
-  &HT_Copy_ClipboardHistory_LW  &HT_Paste_PastePlain_LW  &HT_CaseCycle_Reconvert_LW  &trans  &trans  &none
+  &kp LEFT  &HT_MoveSelectLinePrev_LW 0 0  &HT_MoveSelectLineNext_LW 0 0  &kp RIGHT  &HT_Undo_Redo_LW 0 0  &Cut_LW
+  &HT_Copy_ClipboardHistory_LW 0 0  &HT_Paste_PastePlain_LW 0 0  &HT_CaseCycle_Reconvert_LW 0 0  &trans  &trans  &none
   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &none  &none
   &none  &tog 11  &trans  &trans  &trans  &none
   &none
@@ -2007,8 +2008,8 @@
 
         layer_Magic {
             bindings = <
-  &HT_Reset_Bootloader  &rgb_ug RGB_TOG  &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
-  &none  &none  &rgb_ug RGB_TOG  &HT_Reset_Bootloader  &none  &none
+  &HT_Reset_Bootloader 0 0  &rgb_ug RGB_TOG  &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
+  &none  &none  &rgb_ug RGB_TOG  &HT_Reset_Bootloader 0 0  &none  &none
   &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &mo 26  &none
   &HT_LayerToTo 0 4  &HT_LayerToTo 1 5  &HT_LayerToTo 2 6  &HT_LayerToTo 3 7  &none  &none
   &kp C_PREV  &kp C_NEXT  &none  &none  &none  &BLE_Profile_0
@@ -2052,8 +2053,8 @@
   &mkp MB5  &mkp RCLK  &mkp MCLK  &mkp LCLK  &mkp MB4  &mkp MB4
   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_UP
   &msc SCRL_DOWN  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
-  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A  &Cut_A
-  &HT_Copy_ClipboardHistory_A  &HT_Paste_PastePlain_A  &mo 17  &trans  &trans  &mo 17
+  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
+  &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
   &none  &PointerLayer_A  &trans  &trans  &trans  &none
   &none
@@ -2067,7 +2068,7 @@
   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_DOWN
   &msc SCRL_UP  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
   &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &Undo_LW  &Cut_LW
-  &HT_Copy_ClipboardHistory_LW  &HT_Paste_PastePlain_LW  &mo 17  &trans  &trans  &mo 17
+  &HT_Copy_ClipboardHistory_LW 0 0  &HT_Paste_PastePlain_LW 0 0  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
   &none  &PointerLayer_LW  &trans  &trans  &trans  &none
   &none
