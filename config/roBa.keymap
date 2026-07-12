@@ -2039,7 +2039,7 @@
         layer_CursorNav_A {
             bindings = <
   &none  &none  &ZoomOut_A  &ZoomIn_A  &none  &WindowClose_A
-  &HT_WindowRestore_Maximize_A 0 0  &AppPrev_A  &AppNext_A 0 0  &FullscreenToggle_A  &TabPrev_ALW  &HistoryBack_A
+  &HT_WindowRestore_Maximize_A 0 0  &AppPrev_A  &AppNext_A  &FullscreenToggle_A  &TabPrev_ALW  &HistoryBack_A
   &HistoryForward_A  &TabNext_ALW  &none  &none  &mo 26  &ScreenCapture_A
   &DesktopLeft_A  &TaskView_A  &SystemSearch_A  &DesktopRight_A  &ScreenLock_A  &DevTools_A
   &CommandPalette_A  &URLbar_A  &HT_Copilot_A 0 0  &none  &none  &none
@@ -2069,7 +2069,7 @@
   &none  &FindPrev_A  &HT_Find_Replace_A 0 0  &FindNext_A  &HT_CaseCycle_Reconvert_A 0 0  &none
   &HT_MoveSelectWordPrev_A 0 0  &HT_MoveSelectBlockPrev_A 0 0  &HT_MoveSelectBlockNext_A 0 0  &HT_MoveSelectWordNext_A 0 0  &SelectAll_A  &SelectWholeBlock_A
   &SelectWholeLine_A  &SelectWholeWord_A  &SelectClear_ALW  &none  &mo 26  &none
-  &mt LS(LEFT) LEFT  &HT_MoveSelectLinePrev_A  &HT_MoveSelectLineNext_A 0 0  &mt LS(RIGHT) RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
+  &mt LS(LEFT) LEFT  &HT_MoveSelectLinePrev_A 0 0  &HT_MoveSelectLineNext_A 0 0  &mt LS(RIGHT) RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
   &Copy_A  &HT_Paste_PastePlain_A 0 0  &ClipboardHistory_A  &none  &none  &none
   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &none  &none
   &none  &tog 10  &trans  &trans  &trans  &trans
@@ -2098,7 +2098,7 @@
   &to 4  &to 5  &to 6  &to 7  &none  &none
   &kp C_VOL_DN  &kp C_VOL_UP  &rgb_ug RGB_TOG  &none  &mo 26  &rgb_ug RGB_TOG
   &to 0  &to 1  &to 2  &to 3  &none  &none
-  &kp C_PREV  &kp C_NEXT  &none  &none  &none  &BLE_Profile_0 0 0
+  &kp C_PREV  &kp C_NEXT  &none  &none  &none  &BLE_Profile_0
   &BLE_Profile_1  &BLE_Profile_2  &BLE_Profile_3  &BLE_Profile_4  &none  &none
   &none  &tog 12  &none  &none  &none  &none
   &none
