@@ -6,11 +6,7 @@
  */
 
 
-/* roBa conversion generated from 9ee9c638-15a2-4e4c-8803-091a71d8ecfb_ks40.json source; based on last-known-good 0f7cced4 wheel-all-layers keymap
- *
- * This file was generated automatically. You may or may not want to
- * edit it directly.
- */
+/* roBa conversion generated from 9605b8a6-7994-4d04-98d7-80160d29d007_ks35.json; based on last-known-good roBa keymap structure. */
 
 #include <behaviors.dtsi>
 
@@ -91,6 +87,8 @@
 #define LAYER_TypingFocus_Q 25
 #define LAYER_HSCROLL 26
 
+#define COMBO_MAX_COMBOS_PER_KEY 8
+
 
 /* System behavior and macros */
 
@@ -104,6 +102,49 @@
             bindings
                 = <&rgb_ug RGB_TOG>;
         };
+
+        SelectAll_A: SelectAll_A {
+            label = "&SELECTALL_A";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A)>;
+        };
+
+        SelectAll_LW: SelectAll_LW {
+            label = "&SELECTALL_LW";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>;
+        };
+
+        IME_Off_A: IME_Off_A {
+            label = "&IME_OFF_A";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2>;
+        };
+
+        IME_Off_LW: IME_Off_LW {
+            label = "&IME_OFF_LW";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT5>;
+        };
+
+        IME_ON_A: IME_ON_A {
+            label = "&IME_ON_A";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG1>;
+        };
+
+        IME_ON_LW: IME_ON_LW {
+            label = "&IME_ON_LW";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT4>;
+        };
+
     };
 };
 
@@ -1569,6 +1610,14 @@
             bindings = <&mo 16>, <&tog 16>;
         };
 
+        HT_Keypress_LayerMomentary: HT_Keypress_LayerMomentary {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
     };
 };
 
@@ -1606,16 +1655,6 @@
             key-positions = <31 32>;
             bindings = <&bt BT_CLR>;
             layers = <12>;
-        };
-
-        combo_CapsWord_Shift {
-            key-positions = <37 38>;
-            bindings = <&HT_CapsWord_Shift LSHFT 0>;
-        };
-
-        combo_Escape {
-            key-positions = <38 39>;
-            bindings = <&kp ESC>;
         };
 
         combo_FnF01 {
@@ -1690,25 +1729,13 @@
             layers = <13 14>;
         };
 
-        combo_InputSwitch_EmojiPicker_A {
-            key-positions = <27 28>;
-            bindings = <&HT_InputSwitch_EmojiPicker_A 0 0>;
-            layers = <0 1 4 5>;
-        };
-
-        combo_InputSwitch_EmojiPicker_LW {
-            key-positions = <27 28>;
-            bindings = <&HT_InputSwitch_EmojiPicker_LW 0 0>;
-            layers = <2 3 6 7>;
-        };
-
-        combo_PointerTravel_LH {
+        combo_MouseWarp_LH {
             key-positions = <14 26>;
             bindings = <&mo 19>;
             layers = <15 16>;
         };
 
-        combo_PointerTravel_RH {
+        combo_MouseWarp_RH {
             key-positions = <17 29>;
             bindings = <&mo 19>;
             layers = <15 16>;
@@ -1768,11 +1795,6 @@
             layers = <0 1 2 3 4 5 6 7>;
         };
 
-        combo_Tab_ShiftTab {
-            key-positions = <41 40>;
-            bindings = <&mt LS(TAB) TAB>;
-        };
-
         combo_ToggleLayer_Autoshift_ColemakDH {
             key-positions = <10 34>;
             bindings = <&tog 22>;
@@ -1783,18 +1805,6 @@
             key-positions = <10 34>;
             bindings = <&tog 23>;
             layers = <4 5 6 7>;
-        };
-
-        combo_ToggleLayer_Pointer_A {
-            key-positions = <37 39>;
-            bindings = <&tog 15>;
-            layers = <0 1 4 8 10 15 5>;
-        };
-
-        combo_ToggleLayer_Pointer_LW {
-            key-positions = <37 39>;
-            bindings = <&tog 16>;
-            layers = <2 3 6 7 9 11 16>;
         };
 
         combo_ToggleLayer_Typing_ColemakDH {
@@ -1826,11 +1836,87 @@
             bindings = <&ZoomReset_A>;
             layers = <9>;
         };
-    };
 
+        combo_IME_Off_A {
+            key-positions = <12 13>;
+            bindings = <&IME_Off_A>;
+            layers = <0 1 4 5 13 20>;
+        };
 
+        combo_IME_Off_LW {
+            key-positions = <12 13>;
+            bindings = <&IME_Off_LW>;
+            layers = <2 3 6 7 14 21>;
+        };
 
-    behaviors {
+        combo_IME_ON_A {
+            key-positions = <18 19>;
+            bindings = <&IME_ON_A>;
+            layers = <0 1 4 5 13 20>;
+        };
+
+        combo_InputSwitch_EmojiPicker_A {
+            key-positions = <14 17>;
+            bindings = <&HT_InputSwitch_EmojiPicker_A 0 0>;
+            layers = <0 1 4 5>;
+        };
+
+        combo_InputSwitch_EmojiPicker_LW {
+            key-positions = <14 17>;
+            bindings = <&HT_InputSwitch_EmojiPicker_LW 0 0>;
+            layers = <2 3 6 7>;
+        };
+
+        combo_ToggleLayer_Mouse_A {
+            key-positions = <37 38>;
+            bindings = <&tog 15>;
+            layers = <0 1 4 8 10 15 5>;
+        };
+
+        combo_MomentaryLayer_Magic {
+            key-positions = <39 37>;
+            bindings = <&mo 12>;
+        };
+
+        combo_ShiftEnter {
+            key-positions = <33 32>;
+            bindings = <&kp LS(RET)>;
+            layers = <0 1 2 3 4 5 6 7>;
+        };
+
+        combo_Escape {
+            key-positions = <38 39>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_ShiftTab {
+            key-positions = <10 11>;
+            bindings = <&kp LS(TAB)>;
+        };
+
+        combo_CapsWord_Shift {
+            key-positions = <40 41>;
+            bindings = <&HT_CapsWord_Shift LSHFT>;
+            layers = <0 1 2 3 4 5 6 7>;
+        };
+
+        combo_Tab {
+            key-positions = <20 21>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_IME_ON_LW {
+            key-positions = <18 19>;
+            bindings = <&IME_ON_LW>;
+            layers = <2 3 6 7 14 21>;
+        };
+
+        combo_ToggleLayer_Mouse_LW {
+            key-positions = <37 38>;
+            bindings = <&tog 16>;
+            layers = <2 3 6 7 9 11 16>;
+        };
+
     };
 };
 
@@ -1844,10 +1930,10 @@
   &kp L  &kp U  &kp Y  &kp MINUS  &HRM_LHC5R3 LCTRL A  &HRM_LHC4R3 LALT R
   &HRM_LHC3R3 LGUI S  &HRM_LHC2R3 LSHFT T  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT M
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LGUI E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LCTRL O  &kp Z  &kp X
-  &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &kp LANG2  &kp LANG1  &kp K
-  &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp SQT  &mo 12  &none
+  &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &none  &none  &kp K
+  &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp SQT  &none  &none
   &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1858,10 +1944,10 @@
   &kp L  &kp U  &kp Y  &kp MINUS  &HRM_LHC5R3 LCTRL A  &HRM_LHC4R3 LALT R
   &HRM_LHC3R3 LGUI S  &HRM_LHC2R3 LSHFT T  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT M
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LGUI E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LCTRL O  &kp Z  &kp X
-  &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &kp LANG2  &kp LANG1  &kp K
-  &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp LS(N7)  &mo 12  &none
+  &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &none  &none  &kp K
+  &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
   &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1872,10 +1958,10 @@
   &kp L  &kp U  &kp Y  &kp MINUS  &HRM_LHC5R3 LGUI A  &HRM_LHC4R3 LALT R
   &HRM_LHC3R3 LCTRL S  &HRM_LHC2R3 LSHFT T  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT M
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LCTRL E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LGUI O  &kp Z  &kp X
-  &kp C  &kp D  &kp V  &kp INT5  &kp INT4  &kp K
-  &kp H  &kp COMMA  &kp DOT  &kp SQT  &mo 12  &none
+  &kp C  &kp D  &kp V  &none  &none  &kp K
+  &kp H  &kp COMMA  &kp DOT  &kp SQT  &none  &none
   &none  &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1886,10 +1972,10 @@
   &kp L  &kp U  &kp Y  &kp MINUS  &HRM_LHC5R3 LGUI A  &HRM_LHC4R3 LALT R
   &HRM_LHC3R3 LCTRL S  &HRM_LHC2R3 LSHFT T  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT M
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LCTRL E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LGUI O  &kp Z  &kp X
-  &kp C  &kp D  &kp V  &kp INT5  &kp INT4  &kp K
-  &kp H  &kp COMMA  &kp DOT  &kp LS(N7)  &mo 12  &none
+  &kp C  &kp D  &kp V  &none  &none  &kp K
+  &kp H  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
   &none  &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1900,10 +1986,10 @@
   &kp U  &kp I  &kp O  &kp P  &HRM_LHC5R3 LCTRL A  &HRM_LHC4R3 LALT S
   &HRM_LHC3R3 LGUI D  &HRM_LHC2R3 LSHFT F  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT H
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LGUI K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LCTRL MINUS  &kp Z  &kp X
-  &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &kp LANG2  &kp LANG1  &kp N
-  &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp SQT  &mo 12  &none
+  &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &none  &none  &kp N
+  &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp SQT  &none  &none
   &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1914,10 +2000,10 @@
   &kp U  &kp I  &kp O  &kp P  &HRM_LHC5R3 LCTRL A  &HRM_LHC4R3 LALT S
   &HRM_LHC3R3 LGUI D  &HRM_LHC2R3 LSHFT F  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT H
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LGUI K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LCTRL MINUS  &kp Z  &kp X
-  &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &kp LANG2  &kp LANG1  &kp N
-  &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp LS(N7)  &mo 12  &none
+  &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &none  &none  &kp N
+  &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
   &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1928,10 +2014,10 @@
   &kp U  &kp I  &kp O  &kp P  &HRM_LHC5R3 LGUI A  &HRM_LHC4R3 LALT S
   &HRM_LHC3R3 LCTRL D  &HRM_LHC2R3 LSHFT F  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT H
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LCTRL K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LGUI MINUS  &kp Z  &kp X
-  &kp C  &kp V  &kp B  &kp INT5  &kp INT4  &kp N
-  &kp M  &kp COMMA  &kp DOT  &kp SQT  &mo 12  &none
+  &kp C  &kp V  &kp B  &none  &none  &kp N
+  &kp M  &kp COMMA  &kp DOT  &kp SQT  &none  &none
   &none  &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -1942,51 +2028,51 @@
   &kp U  &kp I  &kp O  &kp P  &HRM_LHC5R3 LGUI A  &HRM_LHC4R3 LALT S
   &HRM_LHC3R3 LCTRL D  &HRM_LHC2R3 LSHFT F  &HRM_LHC1R3 RALT G  &none  &mo 26  &HRM_RHC1R3 RALT H
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LCTRL K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LGUI MINUS  &kp Z  &kp X
-  &kp C  &kp V  &kp B  &kp INT5  &kp INT4  &kp N
-  &kp M  &kp COMMA  &kp DOT  &kp LS(N7)  &mo 12  &none
+  &kp C  &kp V  &kp B  &none  &none  &kp N
+  &kp M  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
   &none  &PointerLayer_LW  &HT_Thumb_Layer 11 BSPC  &HT_Thumb_Layer 9 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
-  &mo 12
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_CursorNav_A {
             bindings = <
-  &none  &none  &ZoomOut_A  &ZoomIn_A  &none  &ScreenCapture_A
-  &DesktopLeft_A  &AppPrev_A  &AppNext_A  &DesktopRight_A  &TabPrev_ALW  &HistoryBack_A
-  &HistoryForward_A  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_A 0 0
-  &SystemSearch_A  &TaskView_A  &FullscreenToggle_A  &WindowClose_A  &none  &DevTools_A
-  &CommandPalette_A  &URLbar_A  &none  &trans  &trans  &HT_Copilot_A 0 0
+  &none  &none  &ZoomOut_A  &ZoomIn_A  &none  &WindowClose_A
+  &HT_WindowRestore_Maximize_A  &AppPrev_A  &AppNext_A  &FullscreenToggle_A  &TabPrev_ALW  &HistoryBack_A
+  &HistoryForward_A  &TabNext_ALW  &none  &none  &mo 26  &ScreenCapture_A
+  &DesktopLeft_A  &TaskView_A  &SystemSearch_A  &DesktopRight_A  &ScreenLock_A  &DevTools_A
+  &CommandPalette_A  &URLbar_A  &HT_Copilot_A  &none  &none  &none
   &SnapLeft_A  &SnapUp_A  &SnapDown_A  &SnapRight_A  &none  &none
-  &none  &tog 8  &trans  &trans  &trans  &none
-  &ScreenLock_A
+  &none  &tog 8  &trans  &trans  &trans  &trans
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_CursorNav_LW {
             bindings = <
-  &none  &none  &ZoomOut_LW  &ZoomIn_LW  &none  &ScreenCapture_LW
-  &DesktopLeft_LW  &AppPrev_LW  &AppNext_LW  &DesktopRight_LW  &TabPrev_ALW  &HistoryBack_LW
-  &HistoryForward_LW  &TabNext_ALW  &none  &none  &mo 26  &HT_WindowRestore_Maximize_LW 0 0
-  &SystemSearch_LW  &TaskView_LW  &FullscreenToggle_LW  &WindowClose_LW  &none  &DevTools_LW
-  &CommandPalette_LW  &URLbar_LW  &none  &trans  &trans  &HT_Copilot_LW 0 0
+  &none  &none  &ZoomOut_LW  &ZoomIn_LW  &none  &WindowClose_LW
+  &HT_WindowRestore_Maximize_LW  &AppPrev_LW  &AppNext_LW  &FullscreenToggle_LW  &TabPrev_ALW  &HistoryBack_LW
+  &HistoryForward_LW  &TabNext_ALW  &none  &none  &mo 26  &ScreenCapture_LW
+  &DesktopLeft_LW  &TaskView_LW  &SystemSearch_LW  &DesktopRight_LW  &ScreenLock_LW  &DevTools_LW
+  &CommandPalette_LW  &URLbar_LW  &HT_Copilot_LW  &none  &none  &none
   &SnapLeft_LW  &SnapUp_LW  &SnapDown_LW  &SnapRight_LW  &none  &none
-  &none  &tog 9  &trans  &trans  &trans  &none
-  &ScreenLock_LW
+  &none  &tog 9  &trans  &trans  &trans  &trans
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_CursorText_A {
             bindings = <
-  &none  &FindPrev_A  &HT_Find_Replace_A 0 0  &FindNext_A  &none  &none
-  &HT_MoveSelectWordPrev_A 0 0  &HT_MoveSelectBlockPrev_A 0 0  &HT_MoveSelectBlockNext_A 0 0  &HT_MoveSelectWordNext_A 0 0  &SelectClear_ALW  &SelectWholeBlock_A
-  &SelectWholeLine_A  &SelectWholeWord_A  &none  &none  &mo 26  &none
-  &kp LEFT  &HT_MoveSelectLinePrev_A 0 0  &HT_MoveSelectLineNext_A 0 0  &kp RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
-  &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &HT_CaseCycle_Reconvert_A 0 0  &trans  &trans  &none
+  &none  &FindPrev_A  &HT_Find_Replace_A  &FindNext_A  &HT_CaseCycle_Reconvert_A  &none
+  &HT_MoveSelectWordPrev_A  &HT_MoveSelectBlockPrev_A  &HT_MoveSelectBlockNext_A  &HT_MoveSelectWordNext_A  &SelectAll_A  &SelectWholeBlock_A
+  &SelectWholeLine_A  &SelectWholeWord_A  &SelectClear_ALW  &none  &mo 26  &none
+  &mt LS(LEFT) LEFT  &HT_MoveSelectLinePrev_A  &HT_MoveSelectLineNext_A  &mt LS(RIGHT) RIGHT  &HT_Undo_Redo_A  &Cut_A
+  &Copy_A  &HT_Paste_PastePlain_A  &ClipboardHistory_A  &none  &none  &none
   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &none  &none
-  &none  &tog 10  &trans  &trans  &trans  &none
+  &none  &tog 10  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1994,13 +2080,13 @@
 
         layer_CursorText_LW {
             bindings = <
-  &none  &FindPrev_LW  &HT_Find_Replace_LW 0 0  &FindNext_LW  &none  &none
-  &HT_MoveSelectWordPrev_LW 0 0  &HT_MoveSelectBlockPrev_LW 0 0  &HT_MoveSelectBlockNext_LW 0 0  &HT_MoveSelectWordNext_LW 0 0  &SelectClear_ALW  &SelectWholeBlock_LW
-  &SelectWholeLine_LW  &SelectWholeWord_LW  &none  &none  &mo 26  &none
-  &kp LEFT  &HT_MoveSelectLinePrev_LW 0 0  &HT_MoveSelectLineNext_LW 0 0  &kp RIGHT  &HT_Undo_Redo_LW 0 0  &Cut_LW
-  &HT_Copy_ClipboardHistory_LW 0 0  &HT_Paste_PastePlain_LW 0 0  &HT_CaseCycle_Reconvert_LW 0 0  &trans  &trans  &none
+  &none  &FindPrev_LW  &HT_Find_Replace_LW  &FindNext_LW  &HT_CaseCycle_Reconvert_LW  &none
+  &HT_MoveSelectWordPrev_LW  &HT_MoveSelectBlockPrev_LW  &HT_MoveSelectBlockNext_LW  &HT_MoveSelectWordNext_LW  &SelectAll_LW  &SelectWholeBlock_LW
+  &SelectWholeLine_LW  &SelectWholeWord_LW  &SelectClear_ALW  &none  &mo 26  &none
+  &mt LS(LEFT) LEFT  &HT_MoveSelectLinePrev_LW  &HT_MoveSelectLineNext_LW  &mt LS(RIGHT) RIGHT  &HT_Undo_Redo_LW  &Cut_LW
+  &Copy_LW  &HT_Paste_PastePlain_LW  &ClipboardHistory_LW  &none  &none  &none
   &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &none  &none
-  &none  &tog 11  &trans  &trans  &trans  &none
+  &none  &tog 11  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2008,10 +2094,10 @@
 
         layer_Magic {
             bindings = <
-  &HT_Reset_Bootloader 0 0  &rgb_ug RGB_TOG  &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
-  &none  &none  &rgb_ug RGB_TOG  &HT_Reset_Bootloader 0 0  &none  &none
-  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &mo 26  &none
-  &HT_LayerToTo 0 4  &HT_LayerToTo 1 5  &HT_LayerToTo 2 6  &HT_LayerToTo 3 7  &none  &none
+  &none  &none  &kp C_BRI_DN  &kp C_BRI_UP  &HT_Reset_Bootloader  &HT_Reset_Bootloader
+  &to 4  &to 5  &to 6  &to 7  &none  &none
+  &kp C_VOL_DN  &kp C_VOL_UP  &rgb_ug RGB_TOG  &none  &mo 26  &rgb_ug RGB_TOG
+  &to 0  &to 1  &to 2  &to 3  &none  &none
   &kp C_PREV  &kp C_NEXT  &none  &none  &none  &BLE_Profile_0
   &BLE_Profile_1  &BLE_Profile_2  &BLE_Profile_3  &BLE_Profile_4  &none  &none
   &none  &tog 12  &none  &none  &none  &none
@@ -2022,13 +2108,13 @@
 
         layer_Number_E {
             bindings = <
-  &none  &kp LS(N9)  &kp LS(N0)  &kp LS(SEMI)  &none  &kp LS(N8)
-  &kp LS(EQUAL)  &kp EQUAL  &kp MINUS  &kp LS(N5)  &HRM_LHC5R3 LCTRL N5  &HRM_LHC4R3 LALT N4
+  &none  &kp LS(N9)  &kp LS(N0)  &none  &kp LS(SEMI)  &kp LS(N8)
+  &kp LS(EQUAL)  &kp EQUAL  &kp LS(N5)  &kp MINUS  &HRM_LHC5R3 LCTRL N5  &HRM_LHC4R3 LALT N4
   &HRM_LHC3R3 LGUI N3  &HRM_LHC2R3 LSHFT N2  &kp N1  &none  &mo 26  &kp N6
   &HRM_RHC2R3 LSHFT N7  &HRM_RHC3R3 LGUI N8  &HRM_RHC4R3 LALT N9  &HRM_RHC5R3 LCTRL N0  &none  &kp LS(COMMA)
-  &kp LS(DOT)  &none  &kp FSLH  &trans  &trans  &none
+  &kp LS(DOT)  &none  &kp FSLH  &none  &none  &none
   &none  &kp COMMA  &kp DOT  &kp SQT  &none  &none
-  &none  &tog 13  &trans  &trans  &trans  &none
+  &none  &tog 13  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2036,13 +2122,13 @@
 
         layer_Number_J {
             bindings = <
-  &none  &kp LS(N8)  &kp LS(N9)  &kp LS(N7)  &none  &kp LS(SQT)
-  &kp LS(SEMI)  &kp LS(MINUS)  &kp MINUS  &kp LS(N5)  &HRM_LHC5R3 LGUI N5  &HRM_LHC4R3 LALT N4
+  &none  &kp LS(N8)  &kp LS(N9)  &none  &kp LS(N7)  &kp LS(SQT)
+  &kp LS(SEMI)  &kp LS(MINUS)  &kp LS(N5)  &kp MINUS  &HRM_LHC5R3 LGUI N5  &HRM_LHC4R3 LALT N4
   &HRM_LHC3R3 LCTRL N3  &HRM_LHC2R3 LSHFT N2  &kp N1  &none  &mo 26  &kp N6
   &HRM_RHC2R3 LSHFT N7  &HRM_RHC3R3 LCTRL N8  &HRM_RHC4R3 LALT N9  &HRM_RHC5R3 LGUI N0  &none  &kp LS(COMMA)
-  &kp LS(DOT)  &none  &kp FSLH  &trans  &trans  &none
+  &kp LS(DOT)  &none  &kp FSLH  &none  &none  &none
   &none  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
-  &none  &tog 14  &trans  &trans  &trans  &none
+  &none  &tog 14  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2053,10 +2139,10 @@
   &mkp MB5  &mkp RCLK  &mkp MCLK  &mkp LCLK  &mkp MB4  &mkp MB4
   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_UP
   &msc SCRL_DOWN  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
-  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
-  &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &mo 17  &trans  &trans  &mo 17
+  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A  &Cut_A
+  &HT_Copy_ClipboardHistory_A  &HT_Paste_PastePlain_A  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-  &none  &PointerLayer_A  &trans  &trans  &trans  &none
+  &none  &PointerLayer_A  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2068,9 +2154,9 @@
   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_DOWN
   &msc SCRL_UP  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
   &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &Undo_LW  &Cut_LW
-  &HT_Copy_ClipboardHistory_LW 0 0  &HT_Paste_PastePlain_LW 0 0  &mo 17  &trans  &trans  &mo 17
+  &HT_Copy_ClipboardHistory_LW  &HT_Paste_PastePlain_LW  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-  &none  &PointerLayer_LW  &trans  &trans  &trans  &none
+  &none  &PointerLayer_LW  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2121,13 +2207,13 @@
         layer_Symbol_E {
             bindings = <
   &kp LS(LBKT)  &kp LS(N9)  &kp LS(N0)  &kp LS(RBKT)  &kp LS(FSLH)  &kp LS(N1)
-  &kp LS(EQUAL)  &kp MINUS  &kp EQUAL  &kp LS(N5)  &HRM_LHC5R3 LCTRL LS(N3)  &HRM_LHC4R3 LALT LS(N6)
+  &kp LS(EQUAL)  &kp EQUAL  &kp LS(N5)  &mt LS(GRAVE) MINUS  &HRM_LHC5R3 LCTRL LS(N3)  &HRM_LHC4R3 LALT LS(N6)
   &HRM_LHC3R3 LGUI LS(MINUS)  &HRM_LHC2R3 LSHFT LS(N4)  &kp LS(N8)  &none  &mo 26  &kp LS(N7)
   &HRM_RHC2R3 LSHFT LS(N2)  &HRM_RHC3R3 LGUI SEMI  &HRM_RHC4R3 LALT LS(SEMI)  &HRM_RHC5R3 LCTRL LS(SQT)  &kp LBKT  &kp LS(COMMA)
-  &kp LS(DOT)  &kp RBKT  &kp FSLH  &trans  &trans  &kp BSLH
-  &kp LS(BSLH)  &kp COMMA  &kp DOT  &kp SQT  &kp LS(GRAVE)  &none
-  &none  &tog 20  &trans  &trans  &trans  &none
-  &kp GRAVE
+  &kp LS(DOT)  &kp RBKT  &kp FSLH  &none  &none  &kp BSLH
+  &kp LS(BSLH)  &kp COMMA  &kp DOT  &mt GRAVE SQT  &none  &none
+  &none  &tog 20  &trans  &trans  &trans  &trans
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
@@ -2135,13 +2221,13 @@
         layer_Symbol_J {
             bindings = <
   &kp LS(RBKT)  &kp LS(N8)  &kp LS(N9)  &kp LS(BSLH)  &kp LS(FSLH)  &kp LS(N1)
-  &kp LS(SEMI)  &kp MINUS  &kp LS(MINUS)  &kp LS(N5)  &HRM_LHC5R3 LGUI LS(N3)  &HRM_LHC4R3 LALT EQUAL
+  &kp LS(SEMI)  &kp LS(MINUS)  &kp LS(N5)  &mt LS(EQUAL) MINUS  &HRM_LHC5R3 LGUI LS(N3)  &HRM_LHC4R3 LALT EQUAL
   &HRM_LHC3R3 LCTRL LS(INT1)  &HRM_LHC2R3 LSHFT LS(N4)  &kp LS(SQT)  &none  &mo 26  &kp LS(N6)
   &HRM_RHC2R3 LSHFT LBKT  &HRM_RHC3R3 LCTRL SEMI  &HRM_RHC4R3 LALT SQT  &HRM_RHC5R3 LGUI LS(N2)  &kp RBKT  &kp LS(COMMA)
-  &kp LS(DOT)  &kp BSLH  &kp FSLH  &trans  &trans  &kp INT1
-  &kp LS(INT3)  &kp COMMA  &kp DOT  &kp LS(N7)  &kp LS(EQUAL)  &none
-  &none  &tog 21  &trans  &trans  &trans  &none
-  &kp LS(LBKT)
+  &kp LS(DOT)  &kp BSLH  &kp FSLH  &none  &none  &kp INT1
+  &kp LS(INT3)  &kp COMMA  &kp DOT  &mt LS(LBKT) LS(N7)  &none  &none
+  &none  &tog 21  &trans  &trans  &trans  &trans
+  &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
