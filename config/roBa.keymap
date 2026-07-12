@@ -1932,7 +1932,7 @@
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LGUI E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LCTRL O  &kp Z  &kp X
   &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &none  &none  &kp K
   &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp SQT  &none  &none
-  &none  &PointerLayer_A 0 0  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
+  &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1946,7 +1946,7 @@
   &HRM_RHC2R3 LSHFT N  &HRM_RHC3R3 LGUI E  &HRM_RHC4R3 LALT I  &HRM_RHC5R3 LCTRL O  &kp Z  &kp X
   &kp C  &HRM_LHC2R4 RCTRL D  &kp V  &none  &none  &kp K
   &HRM_RHC2R4 RCTRL H  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
-  &none  &PointerLayer_A 0 0  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
+  &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -1988,7 +1988,7 @@
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LGUI K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LCTRL MINUS  &kp Z  &kp X
   &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &none  &none  &kp N
   &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp SQT  &none  &none
-  &none  &PointerLayer_A 0 0  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
+  &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 20 RET  &HT_Space_Layer 13 SPACE
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2002,7 +2002,7 @@
   &HRM_RHC2R3 LSHFT J  &HRM_RHC3R3 LGUI K  &HRM_RHC4R3 LALT L  &HRM_RHC5R3 LCTRL MINUS  &kp Z  &kp X
   &kp C  &HRM_LHC2R4 RCTRL V  &kp B  &none  &none  &kp N
   &HRM_RHC2R4 RCTRL M  &kp COMMA  &kp DOT  &kp LS(N7)  &none  &none
-  &none  &PointerLayer_A 0 0  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
+  &none  &PointerLayer_A  &HT_Thumb_Layer 10 BSPC  &HT_Thumb_Layer 8 DEL  &HT_Thumb_Layer 21 RET  &HT_Space_Layer 14 SPACE
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -2142,7 +2142,7 @@
   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
   &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-  &none  &PointerLayer_A 0 0  &trans  &trans  &trans  &trans
+  &none  &PointerLayer_A  &trans  &trans  &trans  &trans
   &none
 >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
