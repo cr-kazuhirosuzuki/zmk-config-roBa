@@ -1838,31 +1838,31 @@
         };
 
         combo_IME_Off_A {
-            key-positions = <12 13>;
+            key-positions = <2 3>;
             bindings = <&IME_Off_A>;
             layers = <0 1 4 5 13 20>;
         };
 
         combo_IME_Off_LW {
-            key-positions = <12 13>;
+            key-positions = <2 3>;
             bindings = <&IME_Off_LW>;
             layers = <2 3 6 7 14 21>;
         };
 
         combo_IME_ON_A {
-            key-positions = <18 19>;
+            key-positions = <6 7>;
             bindings = <&IME_ON_A>;
             layers = <0 1 4 5 13 20>;
         };
 
         combo_InputSwitch_EmojiPicker_A {
-            key-positions = <14 17>;
+            key-positions = <4 5>;
             bindings = <&HT_InputSwitch_EmojiPicker_A 0 0>;
             layers = <0 1 4 5>;
         };
 
         combo_InputSwitch_EmojiPicker_LW {
-            key-positions = <14 17>;
+            key-positions = <4 5>;
             bindings = <&HT_InputSwitch_EmojiPicker_LW 0 0>;
             layers = <2 3 6 7>;
         };
@@ -1890,7 +1890,7 @@
         };
 
         combo_ShiftTab {
-            key-positions = <10 11>;
+            key-positions = <0 1>;
             bindings = <&kp LS(TAB)>;
         };
 
@@ -1901,12 +1901,12 @@
         };
 
         combo_Tab {
-            key-positions = <20 21>;
+            key-positions = <8 9>;
             bindings = <&kp TAB>;
         };
 
         combo_IME_ON_LW {
-            key-positions = <18 19>;
+            key-positions = <6 7>;
             bindings = <&IME_ON_LW>;
             layers = <2 3 6 7 14 21>;
         };
@@ -2137,8 +2137,8 @@
         layer_Pointer_Default_A {
             bindings = <
   &mkp MB5  &mkp RCLK  &mkp MCLK  &mkp LCLK  &mkp MB4  &mkp MB4
-  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_UP
-  &msc SCRL_DOWN  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
+  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &SelectAll_A  &SelectWholeBlock_A
+  &SelectWholeLine_A  &SelectWholeWord_A  &mo 18  &none  &mo 26  &mo 18
   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &HT_Undo_Redo_A 0 0  &Cut_A
   &HT_Copy_ClipboardHistory_A 0 0  &HT_Paste_PastePlain_A 0 0  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
@@ -2151,8 +2151,8 @@
         layer_Pointer_Default_LW {
             bindings = <
   &mkp MB5  &mkp RCLK  &mkp MCLK  &mkp LCLK  &mkp MB4  &mkp MB4
-  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &msc SCRL_LEFT  &msc SCRL_DOWN
-  &msc SCRL_UP  &msc SCRL_RIGHT  &mo 18  &none  &mo 26  &mo 18
+  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB5  &SelectAll_LW  &SelectWholeBlock_LW
+  &SelectWholeLine_LW  &SelectWholeWord_LW  &mo 18  &none  &mo 26  &mo 18
   &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &Undo_LW  &Cut_LW
   &HT_Copy_ClipboardHistory_LW 0 0  &HT_Paste_PastePlain_LW 0 0  &mo 17  &trans  &trans  &mo 17
   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
